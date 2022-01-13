@@ -1,0 +1,30 @@
+class Solution {
+    public static ArrayList<Integer> duplicates(int arr[], int n) {
+        ArrayList<Integer> al = new ArrayList<> ();
+        HashSet<Integer> hs = new HashSet<> ();
+        Arrays.sort(arr);
+        for (int i=0;i<n-1;i++)
+        {
+            if(arr[i]==arr[i+1] && !(hs.contains(arr[i])))
+            {
+                {
+                    hs.add(arr[i]);
+                }
+            }
+        }
+        for (int i:hs)
+        {
+            al.add(i);
+        }
+        
+        Collections.sort(al);
+        
+        if (al.isEmpty())
+        {
+            al.add(-1);
+            return al;
+        }
+        else
+        return al;
+    }
+}
